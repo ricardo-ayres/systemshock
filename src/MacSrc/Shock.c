@@ -120,6 +120,11 @@ int main(int argc, char **argv) {
     init_all();
     setup_init();
 
+    /* Hack to make mode_id=0 work, force change_svga_screen_mode() to 
+       run by initializing convert_use_mode to anything but 0
+    */
+    convert_use_mode = -1;
+
     gPlayingGame = true;
 
     load_da_palette();
